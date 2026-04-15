@@ -9,7 +9,7 @@ watsonx.gov_onprem_troubleshooting
 ---
 
 #### ✅ ZIP file upload error - CP4D에서 배포한 파일이어야 업로드 가능
-on-prem 환경에서 ZIP 업로드가 가능하도록 설정을 확인
+on-prem 환경에서 ZIP 업로드가 가능하도록 설정을 확인 \n
 경로:getting-started-with-watsonx-governance/project.json
 
 "generator": "icp4data-portal-projects"
@@ -17,8 +17,7 @@ on-prem 환경에서 ZIP 업로드가 가능하도록 설정을 확인
 해당 설정이 있어야 on-prem 환경에서 ZIP 파일 업로드가 가능합니다.
 
 #### ✅ model existing error - Model 정보 확인
-on-prem 환경에서 존재하는 모델 정보인지 확인
-
+on-prem 환경에서 존재하는 모델 정보인지 확인\n
 경로:getting-started-with-watsonx-governance/assets/wx_prompt
 -> "model_id":"meta-llama/llama-3-3-70b-instruct"
 model id 확인 만일 안될 경우,
