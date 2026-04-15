@@ -23,4 +23,6 @@ on-prem 환경에서 존재하는 모델 정보인지 확인
 -> "model_id":"meta-llama/llama-3-3-70b-instruct"
 model id 확인 만일 안될 경우,
 project > prompt file 열어서 UI상에서 모델 변경 후 저장
+
+
 ![model error](getting-started-with-watsonx-governance/wxgov_model_error.png)
