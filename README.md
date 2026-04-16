@@ -24,4 +24,24 @@ model id 확인 만일 안될 경우,
 project > prompt file 열어서 UI상에서 모델 변경 후 저장
 
 
-![model error](getting-started-with-watsonx-governance/wxgov_model_error.png)
+![model error](/images/wxgov_model_error.png)
+
+
+
+### 📌MLModel on-prem evaluation
+`evaluate-an-ml-model`로 작업
+
+---
+### ✅ evaluate tab missing error
+SaaS의 경우)
+deployment spaces > deployments > Evaluation 탭 존재
+![SaaS](/images/SaaS_eval.png)
+
+On-prem의 경우 해당 탭이 없음
+해결 방안) OpenScale 별도 구동 및 deploy 연결
+
+deployment space > ML model deploy 후 해당 deploy를 Watsonx OpenScale에서 대시보드에 등록
+인스턴스 > watson OpenScale > 우측 상단 배치 연결 > 모델을 배포한 deployment 클릭
+
+![watson openscale](/images/watson_open_scale.png)
+![watson openscale](/images/wos.png)
