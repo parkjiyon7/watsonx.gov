@@ -37,7 +37,7 @@ SaaS의 경우)
 deployment spaces > deployments > Evaluation 탭 존재
 ![SaaS](/images/SaaS_eval.png)
 
-On-prem의 경우 해당 탭이 없음
+On-prem의 경우) - 해당 탭이 없음
 해결 방안) OpenScale 별도 구동 및 deploy 연결
 
 deployment space > ML model deploy 후 해당 deploy를 Watsonx OpenScale에서 대시보드에 등록
