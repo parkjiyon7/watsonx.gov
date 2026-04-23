@@ -5,8 +5,8 @@
 }
 
 :root {
-    --primary-blue: #a8d5ff;
-    --primary-purple: #d4c5f9;
+    --primary-blue: #b8e0ff;
+    --primary-purple: #e0d5ff;
     --dark-blue: #6ba3d8;
     --dark-purple: #9b7fd4;
     --bg-color: #f8f9fa;
@@ -43,7 +43,7 @@ body {
 }
 
 .sidebar-header h1 {
-    color: rgba(255,255,255,1);
+    color: rgba(50,50,50,0.9);
     font-size: 1.5rem;
     margin-bottom: 0;
     cursor: pointer;
@@ -69,7 +69,7 @@ body {
 
 .nav-section-title {
     padding: 0.5rem 1.5rem;
-    color: rgba(255,255,255,0.95);
+    color: rgba(60,60,60,0.85);
     font-size: 0.85rem;
     font-weight: 600;
     text-transform: uppercase;
