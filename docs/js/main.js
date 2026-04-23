@@ -1,66 +1,47 @@
-// Smooth scrolling for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
-    });
-});
-
-// Add active class to current nav item
-const currentLocation = window.location.pathname;
-const navLinks = document.querySelectorAll('nav a');
-
-navLinks.forEach(link => {
-    if (link.getAttribute('href') === currentLocation.split('/').pop()) {
-        link.style.backgroundColor = 'rgba(255,255,255,0.2)';
-    }
-});
-
-// Add animation on scroll
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-        }
-    });
-}, observerOptions);
-
-// Observe all cards and sections
+// Highlight active navigation item
 document.addEventListener('DOMContentLoaded', () => {
-    const cards = document.querySelectorAll('.card');
-    const sections = document.querySelectorAll('.content-section');
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    const navLinks = document.querySelectorAll('.nav-sub-item');
     
-    cards.forEach(card => {
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(20px)';
-        card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(card);
+    navLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (href === currentPage) {
+            link.classList.add('active');
+        }
     });
 
-    sections.forEach(section => {
+    // Prevent navigation for disabled links
+    const disabledLinks = document.querySelectorAll('.nav-sub-item.disabled');
+    disabledLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            alert('이 섹션은 현재 준비 중입니다.');
+        });
+    });
+
+    // Add smooth scroll animation for page load
+    const contentSections = document.querySelectorAll('.content-section, .card');
+    
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
+
+    contentSections.forEach(section => {
         section.style.opacity = '0';
         section.style.transform = 'translateY(20px)';
         section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
         observer.observe(section);
     });
 });
-
-// Mobile menu toggle (if needed in future)
-function toggleMobileMenu() {
-    const nav = document.querySelector('nav ul');
-    nav.classList.toggle('mobile-active');
-}
 
 // Made with Bob
