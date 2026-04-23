@@ -107,10 +107,6 @@ body {
     left: 0;
 }
 
-/* Sidebar always visible on content pages */
-.sidebar.always-visible {
-    left: 0;
-}
 
 .sidebar-header {
     padding: 4rem 1.5rem 2rem;
@@ -248,11 +244,6 @@ body {
     width: 100%;
 }
 
-/* Main content with visible sidebar */
-.main-content.with-sidebar {
-    margin-left: 280px;
-    padding: 2rem 3rem;
-}
 
 .page-header {
     margin-bottom: 3rem;
