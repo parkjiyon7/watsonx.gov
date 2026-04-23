@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ML 모델 평가 | watsonx.gov</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <h1>🤖 watsonx.gov</h1>
+            <p>자료 모음</p>
+        </div>
+        <nav class="sidebar-nav">
+            <div class="nav-section">
+                <div class="nav-section-title">Hands-on 실습</div>
+                <a href="#" class="nav-item has-dropdown open">📦 On-Premise</a>
+                <div class="nav-dropdown open">
+                    <a href="hands-on-genai.html" class="nav-dropdown-item">🎨 GenAI 평가</a>
+                    <a href="hands-on-ml.html" class="nav-dropdown-item active">🤖 ML 모델 평가</a>
+                </div>
+                <a href="hands-on-saas.html" class="nav-sub-item disabled">☁️ SaaS (준비중)</a>
+            </div>
+            <div class="nav-section">
+                <div class="nav-section-title">Troubleshooting</div>
+                <a href="troubleshooting-onprem.html" class="nav-sub-item">📦 On-Premise</a>
+                <a href="troubleshooting-saas.html" class="nav-sub-item disabled">☁️ SaaS (준비중)</a>
+            </div>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+        <div class="page-header">
+            <h1>🤖 ML 모델 평가</h1>
+            <p>Watson OpenScale을 사용한 ML 모델 모니터링 및 평가</p>
+        </div>
+
+        <div class="content-section">
+            <h2>개요</h2>
+            <p>이 실습에서는 Watson Machine Learning에 배포된 ML 모델을 Watson OpenScale로 모니터링하고 평가하는 방법을 배웁니다.</p>
+        </div>
+
+        <div class="content-section">
+            <h2>📁 필요한 파일</h2>
+            <ul>
+                <li><strong>프로젝트 디렉토리</strong>: <code>evaluate-an-ml-model</code></li>
+                <li><strong>노트북</strong>: <code>2-monitor-wml-model-with-watson-openscale_cCCCAkZa3.ipynb</code></li>
+                <li><strong>데이터 자산</strong>: <code>GoldenBank_HoldoutData.csv</code></li>
+                <li>모델 자산 및 구성 파일</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h2>📚 참조 문서</h2>
+            <p>
+                <a href="https://www.ibm.com/docs/en/watsonx/w-and-w/2.3.x?topic=models-evaluating-ml-model" target="_blank" class="card-link">
+                    IBM 공식 문서 보기
+                </a>
+            </p>
+        </div>
+
+        <div class="content-section">
+            <h2>🔗 관련 파일</h2>
+            <ul>
+                <li><a href="../gov_onprem/gov_onprem_handson/MLmodel_evaluation.md" target="_blank">상세 가이드 문서</a></li>
+                <li><a href="https://github.com/parkjiyon7/watsonx.gov/tree/main/gov_onprem/gov_onprem_handson/evaluate-an-ml-model" target="_blank">프로젝트 파일 (GitHub)</a></li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h2>✅ 사전 요구사항</h2>
+            <ul>
+                <li>Watson Machine Learning 서비스 접근 권한</li>
+                <li>Watson OpenScale 서비스 접근 권한</li>
+                <li>배포된 ML 모델</li>
+                <li>평가용 홀드아웃 데이터</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h2>🎯 주요 학습 내용</h2>
+            <ul>
+                <li>Watson OpenScale 구성</li>
+                <li>모델 품질 메트릭 설정</li>
+                <li>공정성(Fairness) 모니터링</li>
+                <li>드리프트(Drift) 감지</li>
+                <li>설명 가능성(Explainability) 분석</li>
+            </ul>
+        </div>
+    </main>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
