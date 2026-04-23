@@ -45,3 +45,11 @@ wheels/
 # Environment variables
 .env
 .env.local
+
+# Jekyll
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+vendor/
+Gemfile.lock

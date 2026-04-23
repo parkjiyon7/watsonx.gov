@@ -1,0 +1,27 @@
+# Site settings
+title: watsonx.gov 자료 모음
+description: watsonx.governance에 대한 자료를 정리한 사이트
+baseurl: ""
+url: "https://parkjiyon7.github.io/watsonx.gov"
+
+# Build settings
+theme: minima
+markdown: kramdown
+
+# Navigation
+header_pages:
+  - index.md
+  - hands-on.md
+  - troubleshooting.md
+
+# Exclude from processing
+exclude:
+  - .gitignore
+  - README.md
+  - evaluate-an-ml-model/
+  - getting-started-with-watsonx-governance/
+  - adk-project/
+  - bob_deepdive/
+  - bobwxo/
+
+# Made with Bob
