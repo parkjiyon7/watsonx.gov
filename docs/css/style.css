@@ -236,7 +236,7 @@ body {
     display: inline-block;
     padding: 0.5rem 1rem;
     background: linear-gradient(135deg, var(--primary-blue), var(--primary-purple));
-    color: var(--dark-purple);
+    color: white;
     text-decoration: none;
     border-radius: 6px;
     font-weight: 600;
@@ -246,7 +246,6 @@ body {
 .card-link:hover {
     transform: scale(1.05);
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    color: #6b4d9b;
 }
 
 /* Link Card */
