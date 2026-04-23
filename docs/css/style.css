@@ -27,7 +27,7 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: var(--text-color);
-    background-color: var(--bg-color);
+    background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
     display: flex;
     min-height: 100vh;
 }
@@ -267,29 +267,47 @@ body {
     padding: 2rem 3rem 2rem 10rem;
     max-width: 1200px;
     width: 100%;
+    background: transparent;
 }
 
 
 .page-header {
-    margin-bottom: 3rem;
-    padding-bottom: 1.5rem;
-    border-bottom: 3px solid var(--primary-blue);
+    margin-bottom: 2rem;
+    padding: 2rem 3rem;
+    border-bottom: none;
+    background: transparent;
+    width: 100%;
+    max-width: 1600px;
 }
 
 .page-header h1 {
     font-size: 2.5rem;
     color: var(--text-color);
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
     background: linear-gradient(135deg, var(--primary-blue), var(--primary-purple));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     font-weight: 700;
+    padding-bottom: 1rem;
+    display: inline-block;
+    position: relative;
+}
+
+.page-header h1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-blue), var(--primary-purple));
 }
 
 .page-header p {
     color: var(--text-secondary);
     font-size: 1.1rem;
+    margin-top: 1.5rem;
 }
 
 /* Centered Content for Home Page */
@@ -297,19 +315,51 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    margin: 0 auto;
-    padding-top: 5rem;
+    justify-content: flex-start;
+    margin: 0;
+    padding: 3rem 3rem 3rem;
+    width: 100%;
+    max-width: none;
+    min-height: 100vh;
 }
 
 .centered-header {
     text-align: center;
     border-bottom: none;
+    margin-bottom: 2rem;
+}
+
+.centered-header h1 {
+    color: var(--primary-blue);
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: inline-block;
+    padding-bottom: 1rem;
+    position: relative;
+}
+
+.centered-header h1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-blue), var(--primary-purple));
+}
+
+.centered-header p {
+    color: var(--text-color);
 }
 
 .centered-cards {
-    max-width: 900px;
+    width: 100%;
+    max-width: 1600px;
     justify-content: center;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 3rem;
+    background: #e3e8ef;
+    border-radius: 24px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.15);
 }
 
 /* Cards */
@@ -318,7 +368,7 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
     margin: 2rem auto;
-    max-width: 900px;
+    max-width: 1200px;
 }
 
 .card {
@@ -383,8 +433,8 @@ body {
 
 .card-link:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    filter: brightness(1.1);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    filter: brightness(1.15);
 }
 
 /* Link Card */
@@ -420,17 +470,19 @@ body {
     display: inline-block;
     padding: 0.5rem 1rem;
     background: linear-gradient(135deg, var(--primary-blue), var(--primary-purple));
-    color: white;
+    color: white !important;
     text-decoration: none;
     border-radius: 6px;
     font-weight: 500;
     transition: all 0.3s;
     font-size: 0.9rem;
+    border-bottom: none !important;
 }
 
 .link-card .card-link:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    filter: brightness(1.15);
 }
 
 /* Content Section */
@@ -453,6 +505,11 @@ body {
     margin-bottom: 1.5rem;
     font-size: 1.8rem;
     font-weight: 700;
+    padding-bottom: 0.75rem;
+    border-bottom: 3px solid transparent;
+    border-image: var(--gradient-primary) 1;
+    display: block;
+    width: fit-content;
 }
 
 .content-section h3 {
@@ -460,6 +517,11 @@ body {
     margin-top: 1.5rem;
     margin-bottom: 0.75rem;
     font-size: 1.3rem;
+    padding-left: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-left: 4px solid var(--primary-blue);
+    background: linear-gradient(90deg, rgba(74, 144, 226, 0.1), transparent);
 }
 
 .content-section h4 {
@@ -467,6 +529,8 @@ body {
     margin-top: 1rem;
     margin-bottom: 0.5rem;
     font-size: 1.1rem;
+    padding-left: 0.75rem;
+    border-left: 3px solid var(--primary-purple);
 }
 
 .content-section ul {
@@ -476,6 +540,21 @@ body {
 
 .content-section li {
     margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+
+.content-section a:not(.card-link) {
+    color: var(--primary-blue);
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    border-image: var(--gradient-primary) 1;
+    transition: all 0.3s ease;
+    padding-bottom: 2px;
+}
+
+.content-section a:not(.card-link):hover {
+    border-bottom: 2px solid;
+    border-image: var(--gradient-primary) 1;
     color: var(--text-secondary);
 }
 
