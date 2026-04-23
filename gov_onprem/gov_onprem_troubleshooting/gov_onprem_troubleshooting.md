@@ -1,9 +1,7 @@
 # watsonx.gov_onprem_troubleshooting
 watsonx.gov_onprem_troubleshooting
 
-## Getting Started with watsonx.governance - 수정 및 확인 사항
-
-### 📌 GenAI on-prem evaluation
+## 📌 GenAI on-prem evaluation
 `getting-started-with-watsonx-governance`로 작업
 
 ---
@@ -28,7 +26,7 @@ project > prompt file 열어서 UI상에서 모델 변경 후 저장
 
 
 
-### 📌MLModel on-prem evaluation
+## 📌MLModel on-prem evaluation
 `evaluate-an-ml-model`로 작업
 
 ---
