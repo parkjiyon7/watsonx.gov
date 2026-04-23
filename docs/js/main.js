@@ -5,19 +5,20 @@ document.addEventListener('DOMContentLoaded', () => {
     // Hamburger menu functionality
     const hamburgerMenu = document.getElementById('hamburgerMenu');
     const sidebar = document.getElementById('sidebar');
+    const sidebarOverlay = document.getElementById('sidebarOverlay');
     
-    if (hamburgerMenu && sidebar) {
+    if (hamburgerMenu && sidebar && sidebarOverlay) {
         hamburgerMenu.addEventListener('click', () => {
             hamburgerMenu.classList.toggle('active');
             sidebar.classList.toggle('active');
+            sidebarOverlay.classList.toggle('active');
         });
         
-        // Close sidebar when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!sidebar.contains(e.target) && !hamburgerMenu.contains(e.target) && sidebar.classList.contains('active')) {
-                hamburgerMenu.classList.remove('active');
-                sidebar.classList.remove('active');
-            }
+        // Close sidebar when clicking overlay
+        sidebarOverlay.addEventListener('click', () => {
+            hamburgerMenu.classList.remove('active');
+            sidebar.classList.remove('active');
+            sidebarOverlay.classList.remove('active');
         });
     }
     

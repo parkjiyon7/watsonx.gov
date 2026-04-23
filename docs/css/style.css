@@ -30,8 +30,8 @@ body {
 .hamburger-menu {
     position: fixed;
     top: 1.5rem;
-    right: 1.5rem;
-    z-index: 1001;
+    left: 1.5rem;
+    z-index: 1002;
     background: linear-gradient(135deg, var(--primary-blue), var(--primary-purple));
     border: none;
     padding: 0.75rem;
@@ -70,6 +70,25 @@ body {
     transform: rotate(-45deg) translate(7px, -7px);
 }
 
+/* Overlay */
+.sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.sidebar-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
 /* Sidebar */
 .sidebar {
     width: 280px;
@@ -81,7 +100,7 @@ body {
     box-shadow: 2px 0 10px rgba(0,0,0,0.1);
     left: -280px;
     transition: left 0.3s ease;
-    z-index: 1000;
+    z-index: 1001;
 }
 
 .sidebar.active {
