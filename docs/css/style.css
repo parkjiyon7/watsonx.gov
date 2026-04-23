@@ -32,7 +32,7 @@ body {
     top: 1.5rem;
     left: 1.5rem;
     z-index: 1002;
-    background: linear-gradient(135deg, var(--primary-blue), var(--primary-purple));
+    background: white;
     border: none;
     padding: 0.75rem;
     border-radius: 8px;
@@ -53,13 +53,13 @@ body {
     display: block;
     width: 25px;
     height: 3px;
-    background-color: rgba(50,50,50,0.9);
+    background-color: var(--dark-purple);
     border-radius: 2px;
     transition: all 0.3s;
 }
 
 .hamburger-menu.active span:nth-child(1) {
-    transform: rotate(45deg) translate(8px, 8px);
+    transform: rotate(45deg) translate(5px, 5px);
 }
 
 .hamburger-menu.active span:nth-child(2) {
@@ -67,7 +67,7 @@ body {
 }
 
 .hamburger-menu.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(7px, -7px);
+    transform: rotate(-45deg) translate(5px, -5px);
 }
 
 /* Overlay */
@@ -238,7 +238,7 @@ body {
 .main-content {
     margin-left: 0;
     flex: 1;
-    padding: 2rem 3rem 2rem 6rem;
+    padding: 2rem 3rem 2rem 8rem;
     max-width: 1200px;
     width: 100%;
 }
@@ -289,7 +289,8 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
-    margin: 2rem 0;
+    margin: 2rem auto;
+    max-width: 900px;
 }
 
 .card {
