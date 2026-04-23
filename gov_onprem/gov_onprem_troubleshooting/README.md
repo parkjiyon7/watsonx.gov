@@ -24,7 +24,7 @@ model id 확인 만일 안될 경우,
 project > prompt file 열어서 UI상에서 모델 변경 후 저장
 
 
-![model error](git_jiyon_gov/images/wxgov_model_error.png)
+![model error](../../../images/wxgov_model_error.png)
 
 
 
