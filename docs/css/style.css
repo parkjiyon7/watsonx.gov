@@ -30,7 +30,7 @@ body {
 .hamburger-menu {
     position: fixed;
     top: 1.5rem;
-    left: 1.5rem;
+    right: 1.5rem;
     z-index: 1001;
     background: linear-gradient(135deg, var(--primary-blue), var(--primary-purple));
     border: none;
