@@ -5,16 +5,22 @@
 }
 
 :root {
-    --primary-blue: #b8e0ff;
-    --primary-purple: #e0d5ff;
-    --dark-blue: #6ba3d8;
-    --dark-purple: #9b7fd4;
-    --bg-color: #f8f9fa;
-    --sidebar-bg: #ffffff;
-    --text-color: #2c3e50;
-    --text-secondary: #6c757d;
-    --border-color: #e0e0e0;
-    --hover-bg: #f0f4ff;
+    --primary-blue: #4A90E2;
+    --primary-purple: #7B68EE;
+    --dark-blue: #2E5C8A;
+    --dark-purple: #5B4B9A;
+    --accent-blue: #E8F4FD;
+    --accent-purple: #F0EBFF;
+    --bg-color: #F5F7FA;
+    --sidebar-bg: linear-gradient(180deg, #4A90E2 0%, #7B68EE 100%);
+    --text-color: #1A202C;
+    --text-secondary: #4A5568;
+    --border-color: #E2E8F0;
+    --hover-bg: #EDF2F7;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+    --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+    --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
+    --shadow-xl: 0 20px 25px rgba(0,0,0,0.15);
 }
 
 body {
@@ -92,12 +98,12 @@ body {
 /* Sidebar */
 .sidebar {
     width: 280px;
-    background: linear-gradient(180deg, var(--primary-blue) 0%, var(--primary-purple) 100%);
+    background: var(--sidebar-bg);
     padding: 2rem 0;
     position: fixed;
     height: 100vh;
     overflow-y: auto;
-    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+    box-shadow: var(--shadow-lg);
     left: -280px;
     transition: left 0.3s ease;
     z-index: 1001;
@@ -114,16 +120,17 @@ body {
 }
 
 .sidebar-header h1 {
-    color: rgba(50,50,50,0.9);
+    color: white;
     font-size: 1.5rem;
     margin-bottom: 0;
     cursor: pointer;
     transition: opacity 0.3s;
     font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .sidebar-header h1:hover {
-    opacity: 0.8;
+    opacity: 0.9;
 }
 
 .sidebar-header p {
@@ -140,7 +147,7 @@ body {
 
 .nav-section-title {
     padding: 0.5rem 1.5rem;
-    color: rgba(60,60,60,0.85);
+    color: rgba(255,255,255,0.95);
     font-size: 0.85rem;
     font-weight: 600;
     text-transform: uppercase;
@@ -149,7 +156,7 @@ body {
 
 .nav-item {
     padding: 0.75rem 1.5rem;
-    color: rgba(50,50,50,0.9);
+    color: rgba(255,255,255,0.9);
     text-decoration: none;
     display: block;
     transition: all 0.3s;
@@ -184,7 +191,7 @@ body {
 
 .nav-sub-item {
     padding: 0.75rem 1.5rem;
-    color: rgba(50,50,50,0.9);
+    color: rgba(255,255,255,0.9);
     text-decoration: none;
     display: block;
     font-size: 0.9rem;
@@ -218,7 +225,7 @@ body {
 
 .nav-dropdown-item {
     padding: 0.5rem 1.5rem 0.5rem 4rem;
-    color: rgba(50,50,50,0.9);
+    color: rgba(255,255,255,0.85);
     text-decoration: none;
     display: block;
     font-size: 0.85rem;
@@ -227,7 +234,7 @@ body {
 
 .nav-dropdown-item:hover {
     background-color: rgba(255,255,255,0.15);
-    color: rgba(50,50,50,1);
+    color: white;
 }
 
 .nav-dropdown-item.active {
@@ -249,16 +256,28 @@ body {
     margin-bottom: 3rem;
     padding-bottom: 1.5rem;
     border-bottom: 3px solid var(--primary-blue);
+    position: relative;
+}
+
+.page-header::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 80px;
+    height: 3px;
+    background: var(--primary-purple);
 }
 
 .page-header h1 {
     font-size: 2.5rem;
     color: var(--text-color);
     margin-bottom: 0.5rem;
-    background: linear-gradient(135deg, var(--dark-blue), var(--dark-purple));
+    background: linear-gradient(135deg, var(--primary-blue), var(--primary-purple));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    font-weight: 700;
 }
 
 .page-header p {
@@ -297,17 +316,35 @@ body {
 
 .card {
     background: white;
-    border-radius: 12px;
-    padding: 2rem;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    transition: all 0.3s;
-    border: 2px solid transparent;
+    border-radius: 16px;
+    padding: 2.5rem;
+    box-shadow: var(--shadow-md);
+    transition: all 0.3s ease;
+    border: 1px solid var(--border-color);
+    position: relative;
+    overflow: hidden;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-blue), var(--primary-purple));
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
 }
 
 .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
     border-color: var(--primary-blue);
+}
+
+.card:hover::before {
+    transform: scaleX(1);
 }
 
 .card-icon {
@@ -392,16 +429,36 @@ body {
 /* Content Section */
 .content-section {
     background: white;
-    border-radius: 12px;
-    padding: 2rem;
+    border-radius: 16px;
+    padding: 2.5rem;
     margin-bottom: 2rem;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+}
+
+.content-section:hover {
+    box-shadow: var(--shadow-md);
 }
 
 .content-section h2 {
-    color: var(--dark-blue);
-    margin-bottom: 1rem;
+    color: var(--primary-blue);
+    margin-bottom: 1.5rem;
     font-size: 1.8rem;
+    font-weight: 700;
+    position: relative;
+    padding-bottom: 0.75rem;
+}
+
+.content-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-blue), var(--primary-purple));
+    border-radius: 2px;
 }
 
 .content-section h3 {
@@ -454,34 +511,19 @@ body {
 /* Badge */
 .badge {
     display: inline-block;
-    padding: 0.25rem 0.75rem;
-    background-color: var(--primary-blue);
-    color: var(--dark-purple);
-    border-radius: 12px;
-    font-size: 0.85rem;
-    font-weight: 500;
-}
-
-.badge-warning {
-    background-color: #fff3cd;
-    color: #856404;
-}
-
-
-/* Badge */
-.badge {
-    display: inline-block;
-    padding: 0.25rem 0.75rem;
+    padding: 0.5rem 1rem;
     background: linear-gradient(135deg, var(--primary-blue), var(--primary-purple));
     color: white;
-    border-radius: 12px;
+    border-radius: 20px;
     font-size: 0.85rem;
-    font-weight: 500;
+    font-weight: 600;
+    box-shadow: var(--shadow-sm);
+    letter-spacing: 0.3px;
 }
 
 .badge-warning {
-    background: #ffc107;
-    color: #333;
+    background: linear-gradient(135deg, #FFA726, #FF7043);
+    color: white;
 }
 
 .badge-link {
