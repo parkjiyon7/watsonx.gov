@@ -32,7 +32,7 @@ body {
     top: 1.5rem;
     left: 1.5rem;
     z-index: 1002;
-    background: white;
+    background: var(--dark-purple);
     border: none;
     padding: 0.75rem;
     border-radius: 8px;
@@ -53,13 +53,13 @@ body {
     display: block;
     width: 25px;
     height: 3px;
-    background-color: var(--dark-purple);
+    background-color: white;
     border-radius: 2px;
     transition: all 0.3s;
 }
 
 .hamburger-menu.active span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
+    transform: rotate(45deg) translate(6px, 6px);
 }
 
 .hamburger-menu.active span:nth-child(2) {
@@ -67,7 +67,7 @@ body {
 }
 
 .hamburger-menu.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -5px);
+    transform: rotate(-45deg) translate(6px, -6px);
 }
 
 /* Overlay */
@@ -104,6 +104,11 @@ body {
 }
 
 .sidebar.active {
+    left: 0;
+}
+
+/* Sidebar always visible on content pages */
+.sidebar.always-visible {
     left: 0;
 }
 
@@ -238,9 +243,15 @@ body {
 .main-content {
     margin-left: 0;
     flex: 1;
-    padding: 2rem 3rem 2rem 8rem;
+    padding: 2rem 3rem;
     max-width: 1200px;
     width: 100%;
+}
+
+/* Main content with visible sidebar */
+.main-content.with-sidebar {
+    margin-left: 280px;
+    padding: 2rem 3rem;
 }
 
 .page-header {
